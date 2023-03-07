@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 
 interface CityDetailProps {
-    value: string,
+    value: string | number,
     title: string
 }
 

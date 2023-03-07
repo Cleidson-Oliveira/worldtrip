@@ -7,40 +7,20 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-const continents = [
-    {
-        name: "Africa",
-        description: "O berço da raça humana.",
-        image: "/africa.jpg"
-    },
-    {
-        name: "América do norte",
-        description: "o continente mais antigo",
-        image: "/americaN.jpg"
-    },
-    {
-        name: "América do sul",
-        description: "o continente mais antigo",
-        image: "/americaS.jpg"
-    },
-    {
-        name: "Ásia",
-        description: "O maior dos continentes.",
-        image: "/asia.jpg"
-    },
-    {
-        name: "Europa",
-        description: "O continente mais antigo.",
-        image: "/europe.jpg"
-    },
-    {
-        name: "Oceania",
-        description: "o continente mais antigo",
-        image: "/oceania.jpg"
-    },
-]
+interface Continent {
+    id: number,
+    name: string,
+    image: string,
+    shortDescription: string,
+}
 
-export function ContinentsSlider () {
+interface ContinentsSliderProps {
+    continents: Continent[]
+}
+
+interface CardSlideProps extends Continent {}
+
+export function ContinentsSlider ({continents}: ContinentsSliderProps) {
   return (
     <Box
         width="85%"
@@ -67,13 +47,7 @@ export function ContinentsSlider () {
   );
 };
 
-interface CardSlideProps {
-    name: string
-    description: string
-    image: string
-}
-
-const CardSlide = ({name, image, description}: CardSlideProps) => {
+const CardSlide = ({name, image, shortDescription, id}: CardSlideProps) => {
     return (
         <Box
             bgImage={image}
@@ -83,7 +57,7 @@ const CardSlide = ({name, image, description}: CardSlideProps) => {
             w="full"
             h="450px"
         >
-            <Link href="/continent" _hover={{textDecoration: "none"}}>
+            <Link href={`/continent/${id}`} _hover={{textDecoration: "none"}}>
                 <Flex
                     justifyContent="center"
                     alignItems="center"
@@ -94,7 +68,7 @@ const CardSlide = ({name, image, description}: CardSlideProps) => {
                     backgroundColor="#00000080"
                 >
                     <Heading color="#fff">{name}</Heading>
-                    <Text color="#fff">{description}</Text>
+                    <Text color="#fff">{shortDescription}</Text>
                 </Flex>
             </Link>
         </Box>

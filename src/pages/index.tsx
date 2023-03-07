@@ -1,12 +1,24 @@
 import { Text } from "@chakra-ui/react";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { Banner } from "../components/banner-home";
 import { ContinentsSlider } from "../components/continents-slider-home";
 import { Header } from "../components/header";
 import { TravelTypes } from "../components/travel-types-home";
 
-const Home: NextPage = () => {
+interface Continent {
+  id: number,
+  name: string,
+  image: string,
+  shortDescription: string,
+}
+
+interface ContinentProps {
+  continents: Continent[]
+}
+
+const Home: NextPage<ContinentProps> = ({continents}) => {
+
   return (
     <>
       <Head>
@@ -20,9 +32,22 @@ const Home: NextPage = () => {
         Vamos nessa?<br />
         Então escolha seu continente
       </Text>
-      <ContinentsSlider />
+      <ContinentsSlider continents={continents}/>
     </>
   )
 }
 
-export default Home
+export const getStaticProps: GetStaticProps = async () => {
+  
+  const data = await fetch(`${process.env.BACK_END_URL}/continents/`);
+  const continents = await data.json();
+
+  return ({
+      props: {
+        continents
+      },
+      revalidate: 60 * 60 * 24 // 24 hrs
+  })
+}
+
+export default Home;

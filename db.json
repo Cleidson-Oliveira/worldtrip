@@ -1,0 +1,64 @@
+{
+    "continents": [
+        {
+            "id": 1,
+            "name": "Africa",
+            "image": "/africa.jpg",
+            "description": "A África é o terceiro continente mais extenso e o segundo continente mais populoso da Terra, apresentando grande diversidade étnica, cultural, social e política.",
+            "shortDescription": "O berço da raça humana.",
+            "countriesAmount": 15,
+            "languages": 15,
+            "oneHundredMoreCities": 4
+        },
+        {
+            "id": 2,
+            "name": "América do Norte",
+            "image": "/americaN.jpg",
+            "description": "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano.",
+            "shortDescription": "",
+            "countriesAmount": 3,
+            "languages": 6,
+            "oneHundredMoreCities": 10
+        },
+        {
+            "id": 3,
+            "name": "América do Sul",
+            "image": "/americaS.jpg",
+            "description": "A América do Sul é um continente que compreende a porção meridional da América. Também é considerada um subcontinente do continente americano.",
+            "shortDescription": "",
+            "countriesAmount": 13,
+            "languages": 9,
+            "oneHundredMoreCities": 3
+        },
+        {
+            "id": 4,
+            "name": "Ásia",
+            "image": "/asia.jpg",
+            "description": "A Ásia é o maior dos continentes, tanto em área como em população. Abrange um terço das partes sólidas da superfície da Terra e é responsável por abrigar quase três quintos da população mundial.",
+            "shortDescription": "O maior dos continentes.",
+            "countriesAmount": 49,
+            "languages": 50,
+            "oneHundredMoreCities": 52
+        },
+        {
+            "id": 5,
+            "name": "Europa",
+            "image": "/europe.jpg",
+            "description": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste.",
+            "shortDescription": "O continente mais antigo.",
+            "countriesAmount": 50,
+            "languages": 287,
+            "oneHundredMoreCities": 28
+        },
+        {
+            "id": 6,
+            "name": "Oceania",
+            "image": "/oceania.jpg",
+            "description": "Oceania ou Oceânia é uma região geográfica composta por vários grupos de ilhas do oceano Pacífico em conjunto com o contimente da Austrália.",
+            "shortDescription": "",
+            "countriesAmount": 24,
+            "languages": 3,
+            "oneHundredMoreCities": 3
+        }
+    ]
+}
