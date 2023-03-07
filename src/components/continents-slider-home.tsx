@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,27 +10,27 @@ import "swiper/css/scrollbar";
 const continents = [
     {
         name: "Africa",
-        description: "o continente mais antigo",
+        description: "O berço da raça humana.",
         image: "/africa.jpg"
     },
     {
-        name: "Asia",
-        description: "o continente mais antigo",
-        image: "/asia.jpg"
-    },
-    {
-        name: "America do norte",
+        name: "América do norte",
         description: "o continente mais antigo",
         image: "/americaN.jpg"
     },
     {
-        name: "America do sul",
+        name: "América do sul",
         description: "o continente mais antigo",
         image: "/americaS.jpg"
     },
     {
+        name: "Ásia",
+        description: "O maior dos continentes.",
+        image: "/asia.jpg"
+    },
+    {
         name: "Europa",
-        description: "o continente mais antigo",
+        description: "O continente mais antigo.",
         image: "/europe.jpg"
     },
     {
@@ -83,18 +83,20 @@ const CardSlide = ({name, image, description}: CardSlideProps) => {
             w="full"
             h="450px"
         >
-            <Flex
-                justifyContent="center"
-                alignItems="center"
-                direction="column"
-                gap="4"
-                w="full"
-                h="full"
-                backgroundColor="#00000080"
-            >
-                <Heading color="#fff">{name}</Heading>
-                <Text color="#fff">{description}</Text>
-            </Flex>
+            <Link href="/continent" _hover={{textDecoration: "none"}}>
+                <Flex
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="column"
+                    gap="4"
+                    w="full"
+                    h="full"
+                    backgroundColor="#00000080"
+                >
+                    <Heading color="#fff">{name}</Heading>
+                    <Text color="#fff">{description}</Text>
+                </Flex>
+            </Link>
         </Box>
     )
 }
