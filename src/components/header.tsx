@@ -6,7 +6,6 @@ export function Header () {
         <Flex 
             w="full"
             h="100px"
-            bg="#ffffff"
             justifyContent="center"
             alignItems="center"
         >
