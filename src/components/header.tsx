@@ -13,17 +13,17 @@ export function Header ({isHome = true}: HeaderProps) {
             alignItems="center"
             position="relative"
             w="full"
-            h="100px"
+            h={["50px", "100px"]}
         >
             { !isHome && (
-                <Link href="/" position="absolute" left="140px">
-                    <ChevronLeftIcon w={8} h={8} />
+                <Link href="/" position="absolute" left={["4", "140px"]}>
+                    <ChevronLeftIcon w={["4", "8"]} h={["4", "8"]} />
                 </Link>
             )}
             <Image
                 src="/logo.svg"
                 alt="Worldtrip logo"
-                w="180px"
+                w={["80px", "180px"]}
             />
         </Flex>
     )

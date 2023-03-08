@@ -1,12 +1,14 @@
-import { Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 
 export function TravelTypes () {
 
     return (
         <Flex
-            px="140px"
-            py="80px"
-            justifyContent="space-between"
+            px={["50px","140px"]}
+            py={["36px", "80px"]}
+            justifyContent={["center", "space-between"]}
+            flexWrap={["wrap", "wrap", "nowrap"]}
+            gap="4"
         >
             <Card image="/cocktail.svg" text="vida noturna"/>
             <Card image="/surf.svg" text="praia"/>
@@ -24,8 +26,9 @@ interface CardProps {
 
 function Card ({image, text}: CardProps) {
     return (
-        <Flex direction="column" gap="6" alignItems="center" >
-            <Image src={image} alt="" w="85px" />
+        <Flex direction={["row", "column"]} gap={["2", "6"]} alignItems="center" >
+            <Image src={image} alt="" w="85px" display={["none", "block"]}/>
+            <Box w="8px" h="8px" borderRadius="50%" backgroundColor={"yellow.500"} display={["block", "none"]} />
             <Text fontWeight="600" >{text}</Text>
         </Flex>
     )

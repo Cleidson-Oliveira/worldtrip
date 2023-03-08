@@ -23,7 +23,7 @@ interface CardSlideProps extends Continent {}
 export function ContinentsSlider ({continents}: ContinentsSliderProps) {
   return (
     <Box
-        width="85%"
+        width={["full", "85%"]}
         m="auto"
         py="40px"
     >
@@ -55,7 +55,7 @@ const CardSlide = ({name, image, shortDescription, id}: CardSlideProps) => {
             bgPosition="center"
             bgRepeat="no-repeat"
             w="full"
-            h="450px"
+            h={["250px", "450px"]}
         >
             <Link href={`/continent/${id}`} _hover={{textDecoration: "none"}}>
                 <Flex
@@ -67,8 +67,8 @@ const CardSlide = ({name, image, shortDescription, id}: CardSlideProps) => {
                     h="full"
                     backgroundColor="#00000080"
                 >
-                    <Heading color="#fff">{name}</Heading>
-                    <Text color="#fff">{shortDescription}</Text>
+                    <Heading color="#fff" fontSize={["24px", "48px"]}>{name}</Heading>
+                    <Text color="#fff" fontSize={["14px", "24px"]} >{shortDescription}</Text>
                 </Flex>
             </Link>
         </Box>

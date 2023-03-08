@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { Banner } from "../../components/banner-continent";
 import { CardCity } from "../../components/card-city-continent";
 import { CityDetail } from "../../components/city-detail";
@@ -40,7 +40,7 @@ const Continent: NextPage<ContinentProps> = () => {
     const router = useRouter();
     const { id } = router.query;
 
-    const getContinentInfo = async () => {
+    const getContinentInfo = async (id: string) => {
         const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/${id}`);
         
         const continent = await data.json();
@@ -57,7 +57,9 @@ const Continent: NextPage<ContinentProps> = () => {
     }
 
     useEffect(() => {
-        getContinentInfo()
+        if (!id) return;
+
+        getContinentInfo(id as string)
         .then(continent => setContinent(continent))
     
     }, [id])
@@ -78,11 +80,13 @@ const Continent: NextPage<ContinentProps> = () => {
                         name={continent.name}
                     />
                     <Flex
+                        direction={["column", "row"]}
                         justifyContent="space-between"
-                        py="80px"
-                        px="140px"
+                        py={["4", "80px"]}
+                        px={["4", "140px"]}
+                        gap="4"
                     >
-                        <Text w="600px" fontSize="24px">
+                        <Text w={["auto", "600px"]} fontSize={["14px", "24px"]}>
                             {continent.description}
                         </Text>
                         <Flex gap="42px">
@@ -100,7 +104,15 @@ const Continent: NextPage<ContinentProps> = () => {
                             />
                         </Flex>
                     </Flex>
-                    <Flex gap="45px" px="140px" pb="8">
+                    <Heading fontSize={["24px"]} fontWeight={["500"]} py={["4", "40px"]} px={["4", "140px"]}>Cidades +100</Heading>
+                    <Flex
+                        direction={["column", "row"]}
+                        gap={["20px", "45px"]}
+                        px={["0", "140px"]}
+                        pb="8"
+                        w={["full"]}
+                        alignItems={["center", "start"]}
+                    >
                         {cities.map(city => (
                             <CardCity 
                                 key={city.id}

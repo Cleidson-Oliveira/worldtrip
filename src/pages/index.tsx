@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       <Header />
       <Banner />
       <TravelTypes />
-      <Text align="center" fontWeight="500" fontSize="36px" >
+      <Text align="center" fontWeight="500" fontSize={["20px", "36px"]}>
         Vamos nessa?<br />
         Então escolha seu continente
       </Text>
