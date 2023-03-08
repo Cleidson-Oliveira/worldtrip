@@ -38,9 +38,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
     # Instalar as dependências
     $ npm install
-
-    or
-
+    # or
     $ yarn
 
     # Iniciar o banco de dados (Json Server)
@@ -50,9 +48,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
     # Iniciar o projeto
     $ npm run dev
-    
-    or
-
+    # or
     $ yarn dev
 ```
 
