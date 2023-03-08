@@ -1,6 +1,8 @@
 import { Flex, Text } from "@chakra-ui/react";
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { useEffect, useState } from "react";
 import { Banner } from "../../components/banner-continent";
+import { CardCity } from "../../components/card-city-continent";
 import { CityDetail } from "../../components/city-detail";
 import { Header } from "../../components/header";
 
@@ -17,7 +19,33 @@ interface Continent {
 interface ContinentProps {
     continent: Continent
 }
+
+interface Cities {
+    id: number,
+    name: string,
+    country: string,
+    continentId: number,
+    image: string,
+    countryFlag: string,
+}
+
 const Continent: NextPage<ContinentProps> = ({ continent }) => {
+
+    const [ cities, setCities ] = useState<Cities[]>([]);
+
+    const getHundredMoreCities = async () => {
+        const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/cities?continentId=${continent.id}`);
+
+        const cities = await data.json();
+
+        return cities;
+    }
+
+    useEffect(() => {
+        getHundredMoreCities()
+        .then(cities => setCities(cities))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <>
@@ -49,6 +77,15 @@ const Continent: NextPage<ContinentProps> = ({ continent }) => {
                     />
                 </Flex>
             </Flex>
+            <Flex gap="45px" px="140px" pb="8">
+                {cities.map(city => (
+                    <CardCity 
+                        key={city.id}
+                        {...city}
+                    />
+                ))}
+            </Flex>
+            
         </>
     )
 }
@@ -70,7 +107,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const { id } = params!;
     
-    const data = await fetch(`${process.env.BACK_END_URL}/continents/${id}`);
+    const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/${id}`);
     const continent = await data.json();
 
     return ({

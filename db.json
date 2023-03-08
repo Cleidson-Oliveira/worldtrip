@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "Africa",
-            "image": "/africa.jpg",
+            "image": "https://images.unsplash.com/photo-1614531341773-3bff8b7cb3fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80",
             "description": "A África é o terceiro continente mais extenso e o segundo continente mais populoso da Terra, apresentando grande diversidade étnica, cultural, social e política.",
             "shortDescription": "O berço da raça humana.",
             "countriesAmount": 15,
@@ -13,7 +13,7 @@
         {
             "id": 2,
             "name": "América do Norte",
-            "image": "/americaN.jpg",
+            "image": "https://images.unsplash.com/photo-1501466044931-62695aada8e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=787&q=80",
             "description": "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano.",
             "shortDescription": "",
             "countriesAmount": 3,
@@ -23,7 +23,7 @@
         {
             "id": 3,
             "name": "América do Sul",
-            "image": "/americaS.jpg",
+            "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             "description": "A América do Sul é um continente que compreende a porção meridional da América. Também é considerada um subcontinente do continente americano.",
             "shortDescription": "",
             "countriesAmount": 13,
@@ -33,7 +33,7 @@
         {
             "id": 4,
             "name": "Ásia",
-            "image": "/asia.jpg",
+            "image": "https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             "description": "A Ásia é o maior dos continentes, tanto em área como em população. Abrange um terço das partes sólidas da superfície da Terra e é responsável por abrigar quase três quintos da população mundial.",
             "shortDescription": "O maior dos continentes.",
             "countriesAmount": 49,
@@ -43,7 +43,7 @@
         {
             "id": 5,
             "name": "Europa",
-            "image": "/europe.jpg",
+            "image": "https://images.unsplash.com/photo-1485081669829-bacb8c7bb1f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             "description": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste.",
             "shortDescription": "O continente mais antigo.",
             "countriesAmount": 50,
@@ -53,12 +53,158 @@
         {
             "id": 6,
             "name": "Oceania",
-            "image": "/oceania.jpg",
+            "image": "https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             "description": "Oceania ou Oceânia é uma região geográfica composta por vários grupos de ilhas do oceano Pacífico em conjunto com o contimente da Austrália.",
             "shortDescription": "",
             "countriesAmount": 24,
             "languages": 3,
             "oneHundredMoreCities": 3
+        }
+    ],
+    "cities": [
+        {
+            "id": 1,
+            "name": "Hong Kong",
+            "country": "China",
+            "continentId": 4,
+            "image": "https://images.unsplash.com/photo-1506970845246-18f21d533b20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300177.png"
+        },
+        {
+            "id": 2,
+            "name": "Bangkok",
+            "country": "Thailand",
+            "continentId": 4,
+            "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299973.png"
+        },
+        {
+            "id": 3,
+            "name": "Macau",
+            "country": "China",
+            "continentId": 4,
+            "image": "https://images.unsplash.com/photo-1584640962068-f860edeb6f12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300177.png"
+        },
+        {
+            "id": 4,
+            "name": "London",
+            "country": "United Kingdon",
+            "continentId": 5,
+            "image": "https://images.unsplash.com/photo-1520986606214-8b456906c813?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299951.png"
+        },
+        {
+            "id": 5,
+            "name": "Paris",
+            "country": "France",
+            "continentId": 5,
+            "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300016.png"
+        },
+        {
+            "id": 6,
+            "name": "Rome",
+            "country": "Italy",
+            "continentId": 5,
+            "image": "https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300198.png"
+        },
+        {
+            "id": 7,
+            "name": "New York",
+            "country": "United States",
+            "continentId": 2,
+            "image": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299985.png"
+        },
+        {
+            "id": 8,
+            "name": "Los Angeles",
+            "country": "United States",
+            "continentId": 2,
+            "image": "https://images.unsplash.com/photo-1580655653885-65763b2597d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299985.png"
+        },
+        {
+            "id": 9,
+            "name": "Miami",
+            "country": "United States",
+            "continentId": 2,
+            "image": "https://images.unsplash.com/photo-1589083130544-0d6a2926e519?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299985.png"
+        },
+        {
+            "id": 10,
+            "name": "Rio de Janeiro",
+            "country": "Brasil",
+            "continentId": 3,
+            "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299956.png"
+        },
+        {
+            "id": 11,
+            "name": "Buenus Aires",
+            "country": "Argentina",
+            "continentId": 3,
+            "image": "https://images.unsplash.com/photo-1609080814833-d33259e6149b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300123.png"
+        },
+        {
+            "id": 12,
+            "name": "Lima",
+            "country": "Peru",
+            "continentId": 3,
+            "image": "https://images.unsplash.com/photo-1531968455001-5c5272a41129?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=906&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/552/552032.png"
+        },
+        {
+            "id": 13,
+            "name": "Auckland",
+            "country": "New Zealand",
+            "continentId": 6,
+            "image": "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300090.png"
+        },
+        {
+            "id": 14,
+            "name": "Melbourne",
+            "country": "Australia",
+            "continentId": 6,
+            "image": "https://images.unsplash.com/photo-1594300157693-a741f98738c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=775&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299977.png"
+        },
+        {
+            "id": 15,
+            "name": "Sydney",
+            "country": "Australia",
+            "continentId": 6,
+            "image": "https://images.unsplash.com/photo-1528072164453-f4e8ef0d475a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/299/299977.png"
+        },
+        {
+            "id": 16,
+            "name": "Cairo",
+            "country": "Egypt",
+            "continentId": 1,
+            "image": "https://images.unsplash.com/photo-1572252009286-268acec5ca0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300053.png"
+        },
+        {
+            "id": 17,
+            "name": "Hurghada",
+            "country": "Egypt",
+            "continentId": 1,
+            "image": "https://images.unsplash.com/photo-1601196338693-2d103fcc2d61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300053.png"
+        },
+        {
+            "id": 18,
+            "name": "Marrakech",
+            "country": "Marroco",
+            "continentId": 1,
+            "image": "https://images.unsplash.com/photo-1597212618440-806262de4f6b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80",
+            "countryFlag": "https://cdn-icons-png.flaticon.com/512/300/300045.png"
         }
     ]
 }

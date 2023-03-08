@@ -39,7 +39,7 @@ const Home: NextPage<ContinentProps> = ({continents}) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   
-  const data = await fetch(`${process.env.BACK_END_URL}/continents/`);
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/`);
   const continents = await data.json();
 
   return ({
