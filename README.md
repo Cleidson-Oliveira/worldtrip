@@ -5,12 +5,19 @@
 # Indice
 
 * [Sobre](#sobre)
+* [Screenshot](#screenshot)
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Como baixar o projeto](#como-baixar-o-projeto)
 
 ## Sobre
 
 **World Trip** é um projeto front-end criado dentro do **Bootcamp Ignite** da **Rocketseat** com o intuito de aplicar na prática o conteúdo aprendido sobre Next js, React Js, Chakra UI, Typescript e muito mais.
+
+---
+
+## Screenshot
+
+<img src="public/screenshot.gif" />
 
 ---
 

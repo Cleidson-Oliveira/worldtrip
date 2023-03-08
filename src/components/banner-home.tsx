@@ -14,7 +14,7 @@ export function Banner () {
             <Flex direction="column" gap="5">
                 <Heading
                     fontWeight="500"
-                    fontSize={["20px"]}
+                    fontSize={["20px", "4xl"]}
                     lineHeight={["30px", "54px"]}
                     color="#ffffff"
                 >
