@@ -1,6 +1,7 @@
-import { Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
+import { Text } from "@chakra-ui/react";
 import { Banner } from "../components/banner-home";
 import { ContinentsSlider } from "../components/continents-slider-home";
 import { Header } from "../components/header";
@@ -13,11 +14,20 @@ interface Continent {
   shortDescription: string,
 }
 
-interface ContinentProps {
-  continents: Continent[]
-}
+const Home: NextPage = () => {
 
-const Home: NextPage<ContinentProps> = ({continents}) => {
+  const [ continents, setContinents ] = useState<Continent[]>([] as Continent[]);
+
+  const getContinentsData = async (): Promise<Continent[]> => {
+    const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/`);
+    const continents = await data.json() as Continent[];
+    return continents;
+  }
+
+  useEffect(() => {
+    getContinentsData()
+    .then((continents) => setContinents(continents))
+  }, [])
 
   return (
     <>
@@ -35,19 +45,6 @@ const Home: NextPage<ContinentProps> = ({continents}) => {
       <ContinentsSlider continents={continents}/>
     </>
   )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/`);
-  const continents = await data.json();
-
-  return ({
-      props: {
-        continents
-      },
-      revalidate: 60 * 60 * 24 // 24 hrs
-  })
 }
 
 export default Home;

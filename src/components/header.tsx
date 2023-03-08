@@ -1,14 +1,25 @@
-import { Flex, Image } from "@chakra-ui/react";
+import { Flex, Image, Link } from "@chakra-ui/react";
+import { ChevronLeftIcon } from "@chakra-ui/icons";
 
-export function Header () {
+interface HeaderProps {
+    isHome?: boolean
+}
+
+export function Header ({isHome = true}: HeaderProps) {
 
     return (
         <Flex 
-            w="full"
-            h="100px"
             justifyContent="center"
             alignItems="center"
+            position="relative"
+            w="full"
+            h="100px"
         >
+            { !isHome && (
+                <Link href="/" position="absolute" left="140px">
+                    <ChevronLeftIcon w={8} h={8} />
+                </Link>
+            )}
             <Image
                 src="/logo.svg"
                 alt="Worldtrip logo"

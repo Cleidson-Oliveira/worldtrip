@@ -1,10 +1,13 @@
-import { Flex, Text } from "@chakra-ui/react";
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { useRouter } from "next/router";
+import { Flex, Text } from "@chakra-ui/react";
 import { Banner } from "../../components/banner-continent";
 import { CardCity } from "../../components/card-city-continent";
 import { CityDetail } from "../../components/city-detail";
 import { Header } from "../../components/header";
+import { Loading } from "../../components/loading";
 
 interface Continent {
     id: number,
@@ -29,12 +32,24 @@ interface Cities {
     countryFlag: string,
 }
 
-const Continent: NextPage<ContinentProps> = ({ continent }) => {
+const Continent: NextPage<ContinentProps> = () => {
 
+    const [ continent, setContinent ] = useState<Continent | null>(null);
     const [ cities, setCities ] = useState<Cities[]>([]);
 
+    const router = useRouter();
+    const { id } = router.query;
+
+    const getContinentInfo = async () => {
+        const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/${id}`);
+        
+        const continent = await data.json();
+
+        return continent;
+    }
+
     const getHundredMoreCities = async () => {
-        const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/cities?continentId=${continent.id}`);
+        const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/cities?continentId=${continent?.id}`);
 
         const cities = await data.json();
 
@@ -42,80 +57,62 @@ const Continent: NextPage<ContinentProps> = ({ continent }) => {
     }
 
     useEffect(() => {
+        getContinentInfo()
+        .then(continent => setContinent(continent))
+    
+    }, [id])
+
+    useEffect(() => {
         getHundredMoreCities()
         .then(cities => setCities(cities))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+
+    }, [continent])
 
     return (
         <>
-            <Header />
-            <Banner
-                image={continent.image}
-                name={continent.name}
-            />
-            <Flex
-                justifyContent="space-between"
-                py="80px"
-                px="140px"
-            >
-                <Text w="600px" fontSize="24px">
-                    {continent.description}
-                </Text>
-                <Flex gap="42px">
-                    <CityDetail
-                        title="países"
-                        value={continent.countriesAmount}
+            <Header isHome={false} />
+            { continent ?
+                <>
+                    <Banner
+                        image={continent.image}
+                        name={continent.name}
                     />
-                    <CityDetail 
-                        title="línguas" 
-                        value={continent.languages} 
-                    />
-                    <CityDetail 
-                        title="cidades +100" 
-                        value={continent.oneHundredMoreCities} 
-                    />
-                </Flex>
-            </Flex>
-            <Flex gap="45px" px="140px" pb="8">
-                {cities.map(city => (
-                    <CardCity 
-                        key={city.id}
-                        {...city}
-                    />
-                ))}
-            </Flex>
-            
+                    <Flex
+                        justifyContent="space-between"
+                        py="80px"
+                        px="140px"
+                    >
+                        <Text w="600px" fontSize="24px">
+                            {continent.description}
+                        </Text>
+                        <Flex gap="42px">
+                            <CityDetail
+                                title="países"
+                                value={continent.countriesAmount}
+                            />
+                            <CityDetail 
+                                title="línguas" 
+                                value={continent.languages} 
+                            />
+                            <CityDetail 
+                                title="cidades +100" 
+                                value={continent.oneHundredMoreCities} 
+                            />
+                        </Flex>
+                    </Flex>
+                    <Flex gap="45px" px="140px" pb="8">
+                        {cities.map(city => (
+                            <CardCity 
+                                key={city.id}
+                                {...city}
+                            />
+                        ))}
+                    </Flex> 
+                </> : 
+                <Loading />
+            }
         </>
     )
-}
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  
-    return ({
-        paths: [
-            {
-                "params": {
-                    "id": "1",
-                },
-            }
-        ],
-        fallback: "blocking"
-    })
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-    const { id } = params!;
-    
-    const data = await fetch(`${process.env.NEXT_PUBLIC_BACK_END_URL}/continents/${id}`);
-    const continent = await data.json();
-
-    return ({
-        props: {
-          continent
-        },
-        revalidate: 60 * 60 * 24 // 24 hrs
-    })
 }
 
 export default Continent;

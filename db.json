@@ -15,7 +15,7 @@
             "name": "América do Norte",
             "image": "https://images.unsplash.com/photo-1501466044931-62695aada8e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=787&q=80",
             "description": "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano.",
-            "shortDescription": "",
+            "shortDescription": "Maior centro econômico do mundo.",
             "countriesAmount": 3,
             "languages": 6,
             "oneHundredMoreCities": 10
@@ -25,7 +25,7 @@
             "name": "América do Sul",
             "image": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             "description": "A América do Sul é um continente que compreende a porção meridional da América. Também é considerada um subcontinente do continente americano.",
-            "shortDescription": "",
+            "shortDescription": "Maior diversidade natural do mundo.",
             "countriesAmount": 13,
             "languages": 9,
             "oneHundredMoreCities": 3
@@ -55,7 +55,7 @@
             "name": "Oceania",
             "image": "https://images.unsplash.com/photo-1589330273594-fade1ee91647?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             "description": "Oceania ou Oceânia é uma região geográfica composta por vários grupos de ilhas do oceano Pacífico em conjunto com o contimente da Austrália.",
-            "shortDescription": "",
+            "shortDescription": "O menor dos continentes",
             "countriesAmount": 24,
             "languages": 3,
             "oneHundredMoreCities": 3
